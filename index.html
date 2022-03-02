@@ -52,7 +52,7 @@ function preload() {
     this.game.add.text(0, 0, "filler", {font:"1px blaak", fill:"#FFFFFF"});
 }
 function create() {
-    game.add.image(game.world.centerX, game.world.centerY, 'fundo').anchor.set(0.5);
+    
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.physics.arcade.checkCollision.down = false;
     ball = game.add.sprite(game.world.width*0.5, game.world.height-25, 'ball');
