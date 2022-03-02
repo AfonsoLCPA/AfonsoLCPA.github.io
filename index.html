@@ -42,7 +42,7 @@ function preload() {
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.pageAlignHorizontally = true;
     game.scale.pageAlignVertically = true;
-    game.load.image('fundo','img/fundo.png');
+    game.load.image('fundo','img/Fundo.png');
     game.load.image('paddle', 'img/paddle.png');
     game.load.image('brick', 'img/brick4.png',);
     game.load.image('ball', 'img/tiro.png',);
@@ -53,7 +53,7 @@ function preload() {
     this.game.add.text(0, 0, "filler", {font:"1px blaak", fill:"#FFFFFF"});
 }
 function create() {
-    
+    game.add.image(game.world.width*0.5, game.world.height*0.5, 'fundo');
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.physics.arcade.checkCollision.down = false;
     ball = game.add.sprite(game.world.width*0.5, game.world.height-25, 'ball');
@@ -245,7 +245,7 @@ function ballHitBrick4(ball, brick4) {
     killTween4.start();
     score += 12;
     scoreText.setText('Pontos: '+score);
-    if(score === 1944) {
+    if(score === 1943) {
         alert('Ganhou Parabens!');
         location.reload();
     }
@@ -268,7 +268,7 @@ function ballLeaveScreen() {
     }
 }
 function ballHitPaddle(ball, paddle) {
-    ball.body.velocity.x = -1*20*(paddle.x-ball.x);
+    ball.body.velocity.x = -1*15*(paddle.x-ball.x);
 }
 function startGame() {
     startButton.destroy();
