@@ -13,20 +13,20 @@ Menu.preload = function(){
     game.load.bitmapFont('desyrel', 'assets/fonts/desyrel.png', 'assets/fonts/desyrel.xml');
     game.load.spritesheet('button', 'assets/start.png', 201, 71);
     game.load.audio('music','assets/sound/tetris.mp3'); // load music now so it's loaded by the time the game starts
+    game.load.image('scenery', 'assets/electric.jpg');
 };
 
 Menu.create = function(){
-    var welcome = game.add.bitmapText(game.world.centerX, 100, 'gameover', 'WELCOME',64);
+    game.add.image(game.world.centerX,game.world.centerY,'scenery',).anchor.set(0.5);
+    var welcome = game.add.bitmapText(game.world.centerX, 100, 'gameover', 'TETRIS LCPA',64);
     welcome.anchor.setTo(0.5);
     placeSeparators();
     startButton(1);
     document.getElementById('keys').style.display = "flex";
-    document.getElementById('cup').style.display = "block";
 };
 
 Menu.shutdown = function(){
     document.getElementById('keys').style.display = "none";
-    document.getElementById('cup').style.display = "none";
 };
 
 // maps keyboard charcodes to more readable literals

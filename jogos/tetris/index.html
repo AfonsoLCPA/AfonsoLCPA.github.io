@@ -19,10 +19,12 @@
             padding: 0;
         }
         body{
-            background-color: grey;
+            background-color: blueviolet;
         }
         #game{
             position: relative;
+            margin-left: auto;
+            margin-right: auto;
             width: 908px;
           }
         #keys{
@@ -71,9 +73,9 @@
     <div style='' id='game'>
         <div id="keys">
             <div>
-                Rotate counterclockwise: <br/>
-                Rotate clockwise:<br/>
-                Pause: <br/>
+                Rodar para a esquerda: <br/>
+                Rodar para a direita:<br/>
+                Pausar: <br/>
             </div>
             <div>
                <input readonly type="text" id="rotateleft" title="Key to rotate tetromino counterclockwise" value="X" onkeydown="Menu.updateKey(event,this.id)"/><br/>
@@ -81,9 +83,9 @@
                 <input readonly type="text" id="pause" title="Key to pause game" value="SPACEBAR" onkeydown="Menu.updateKey(event,this.id)"/><br/>
             </div>
             <div>
-                Move left:<br/>
-                Move right:<br/>
-                Move down: <br/>
+                Andar para esquerda:<br/>
+                Andar para direita:<br/>
+                Andar para Baixo: <br/>
             </div>
             <div>
                 <input readonly type="text" id="moveleft" title="Key to move tetromino to the left" value="LEFT" onkeydown="Menu.updateKey(event,this.id)"/><br/>

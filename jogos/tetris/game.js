@@ -494,7 +494,6 @@ function gameOver(){
     var gameover = game.add.bitmapText(game.world.centerX, game.world.centerY, 'gameover', 'GAME OVER',64);
     gameover.anchor.setTo(0.5);
     // Display the form to input your name for the leaderboard
-    document.getElementById("name").style.display =  "block";
 }
 
 Game.update = function(){
