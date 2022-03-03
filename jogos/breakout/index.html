@@ -39,6 +39,7 @@ var playing = false;
 var startButton;
 var startsong;
 var hitsound;
+var beginingsong
 
 function preload() {
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -54,9 +55,12 @@ function preload() {
     game.load.image('button', 'img/button.png',);
     game.load.audio('start', 'assets/sounds/Start.mp3',);
     game.load.audio('hit', 'assets/sounds/Hit.mp3',);
+    game.load.audio('begining','assets/sounds/loopmusic.mp3',);
     this.game.add.text(0, 0, "filler", {font:"1px blaak", fill:"#FFFFFF"});
 }
 function create() {
+    beginingsong = game.add.audio('begining');
+    beginingsong.play();
     startsong = game.add.audio('start');
     hitsound = game.add.audio('hit');
     game.add.image(game.world.centerX, game.world.centerY, 'fundo').anchor.set(0.5);
