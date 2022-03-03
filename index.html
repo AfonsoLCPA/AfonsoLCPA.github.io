@@ -220,10 +220,8 @@ function ballHitBrick(ball, brick) {
     }, this);
     killTween.start();
     score += 42;
+    hitsound.play();
     scoreText.setText('Pontos: '+score);
-    if(score +){
-       hitsound.play();
-    }
     if(score === 1944) {
         alert('Ganhou Parabens!');
         location.reload();
@@ -237,10 +235,8 @@ function ballHitBrick2(ball, brick2) {
     }, this);
     killTween2.start();
     score += 32;
+    hitsound.play();
     scoreText.setText('Pontos: '+score);
-    if(score +){
-       hitsound.play();
-    }
     if(score === 1944) {
         alert('Ganhou Parabens!');
         location.reload();
@@ -254,10 +250,8 @@ function ballHitBrick3(ball, brick3) {
     }, this);
     killTween3.start();
     score += 22;
+    hitsound.play();
     scoreText.setText('Pontos: '+score);
-    if(score +){
-       hitsound.play();
-    }
     if(score === 1944) {
         alert('Ganhou Parabens!');
         location.reload();
@@ -271,10 +265,8 @@ function ballHitBrick4(ball, brick4) {
     }, this);
     killTween4.start();
     score += 12;
+    hitsound.play();
     scoreText.setText('Pontos: '+score);
-    if(score +){
-       hitsound.play();
-    }
     if(score === 1944) {
         alert('Ganhou Parabens!');
         location.reload();
