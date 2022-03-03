@@ -37,6 +37,7 @@ var livesText;
 var lifeLostText;
 var playing = false;
 var startButton;
+var startsong;
 
 function preload() {
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -50,9 +51,11 @@ function preload() {
     game.load.image('brick3','img/brick2.png')
     game.load.image('brick4','img/brick1.png')
     game.load.image('button', 'img/button.png',);
+    game.load.audio('start', 'assets/sounds/Start.mp3',);
     this.game.add.text(0, 0, "filler", {font:"1px blaak", fill:"#FFFFFF"});
 }
 function create() {
+    startsong = game.add.audio('start');
     game.add.image(game.world.centerX, game.world.centerY, 'fundo').anchor.set(0.5);
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.physics.arcade.checkCollision.down = false;
@@ -283,6 +286,7 @@ function ballHitPaddle(ball, paddle) {
     ball.body.velocity.x = -1*15*(paddle.x-ball.x);
 }
 function startGame() {
+    startsong.play();
     startButton.destroy();
     ball.body.velocity.set(450, -450);
     playing = true;
