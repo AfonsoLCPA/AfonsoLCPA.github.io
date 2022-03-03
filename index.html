@@ -38,6 +38,7 @@ var lifeLostText;
 var playing = false;
 var startButton;
 var startsong;
+var hitsound;
 
 function preload() {
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -52,10 +53,12 @@ function preload() {
     game.load.image('brick4','img/brick1.png')
     game.load.image('button', 'img/button.png',);
     game.load.audio('start', 'assets/sounds/Start.mp3',);
+    game.loda.audio('hit', 'assets/sounds/Hit.mp3,');
     this.game.add.text(0, 0, "filler", {font:"1px blaak", fill:"#FFFFFF"});
 }
 function create() {
     startsong = game.add.audio('start');
+    hitsound = game.add.audio('hit');
     game.add.image(game.world.centerX, game.world.centerY, 'fundo').anchor.set(0.5);
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.physics.arcade.checkCollision.down = false;
@@ -218,6 +221,9 @@ function ballHitBrick(ball, brick) {
     killTween.start();
     score += 42;
     scoreText.setText('Pontos: '+score);
+    if(score +){
+       hitsound.play();
+    }
     if(score === 1944) {
         alert('Ganhou Parabens!');
         location.reload();
@@ -232,6 +238,9 @@ function ballHitBrick2(ball, brick2) {
     killTween2.start();
     score += 32;
     scoreText.setText('Pontos: '+score);
+    if(score +){
+       hitsound.play();
+    }
     if(score === 1944) {
         alert('Ganhou Parabens!');
         location.reload();
@@ -246,6 +255,9 @@ function ballHitBrick3(ball, brick3) {
     killTween3.start();
     score += 22;
     scoreText.setText('Pontos: '+score);
+    if(score +){
+       hitsound.play();
+    }
     if(score === 1944) {
         alert('Ganhou Parabens!');
         location.reload();
@@ -260,6 +272,9 @@ function ballHitBrick4(ball, brick4) {
     killTween4.start();
     score += 12;
     scoreText.setText('Pontos: '+score);
+    if(score +){
+       hitsound.play();
+    }
     if(score === 1944) {
         alert('Ganhou Parabens!');
         location.reload();
