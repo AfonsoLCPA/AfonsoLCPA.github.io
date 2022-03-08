@@ -45,12 +45,20 @@ var Flood = new Phaser.Class({
     {
         this.load.bitmapFont('atari', 'assets/atari-smooth.png', 'assets/atari-smooth.xml');
         this.load.atlas('flood', 'assets/blobs.png', 'assets/blobs.json');
+        this.load.audio('change','assets/colorchange.mp3');
+        this.load.audio('song','assets/song.mp3');
     },
 
     create: function ()
     {
         this.add.image(400, 300, 'flood', 'background');
         this.gridBG = this.add.image(400, 600 + 300, 'flood', 'grid');
+
+        song = this.sound.add('song');
+
+        song.play({
+            loop: true
+        });
 
         this.createIcon(this.icon1, 'grey', 16, 156);
         this.createIcon(this.icon2, 'red', 16, 312);
@@ -60,6 +68,7 @@ var Flood = new Phaser.Class({
         this.createIcon(this.icon6, 'purple', 688, 458);
 
         this.cursor = this.add.image(16, 156, 'flood', 'cursor-over').setOrigin(0).setVisible(false);
+
 
         //  The game is played in a 14x14 grid with 6 different colors
 
@@ -398,12 +407,16 @@ var Flood = new Phaser.Class({
             return;
         }
 
+        var colorsong = this.sound.add('change');
+
         var oldColor = this.grid[0][0].getData('color');
 
         // console.log('starting flood from', oldColor, this.frames[oldColor], 'to', newColor, this.frames[newColor]);
 
         if (oldColor !== newColor)
         {
+            colorsong.play();
+
             this.currentColor = newColor;
 
             this.matched = [];
@@ -479,6 +492,7 @@ var Flood = new Phaser.Class({
             }, [ block, blockColor, emitter ]);
 
             t += inc;
+
         }
 
         this.time.delayedCall(t, function () {
