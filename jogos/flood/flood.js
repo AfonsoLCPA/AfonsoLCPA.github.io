@@ -107,9 +107,9 @@ var Flood = new Phaser.Class({
 
         this.createArrow();
 
-        this.text1 = this.add.bitmapText(684, 30, 'atari', 'Moves', 20).setAlpha(0);
+        this.text1 = this.add.bitmapText(674, 30, 'atari', 'Jogadas', 18).setAlpha(0);
         this.text2 = this.add.bitmapText(694, 60, 'atari', '00', 40).setAlpha(0);
-        this.text3 = this.add.bitmapText(180, 200, 'atari', 'So close!\n\nClick to\ntry again', 48).setAlpha(0);
+        this.text3 = this.add.bitmapText(180, 200, 'atari', 'Quase!\n\nClica e\ntenta\noutra vez', 48).setAlpha(0);
 
         this.instructions = this.add.image(400, 300, 'flood', 'instructions').setAlpha(0);
 
@@ -677,7 +677,7 @@ var Flood = new Phaser.Class({
     {
         this.stopInputEvents();
 
-        this.text1.setText("Won!!");
+        this.text1.setText("Ganhou!!");
         this.text2.setText(':)');
 
         var i = this.clearGrid();
